@@ -2,21 +2,12 @@ name: festim2-docs
 channels:
   - conda-forge
 dependencies:
+  # Only what pip cannot supply. Everything else, including FESTIM's own
+  # runtime dependencies and the Sphinx tooling, comes from pyproject.toml
+  # via `pip install .[docs]` so there is one list to keep up to date.
   - fenics-dolfinx
-  - matplotlib
-  - sphinx
-  - folium
-  - numpy
-  - tqdm
-  - scifem>=0.20.0
-  - io4dolfinx
+  # PyPI has scifem as an sdist only, and building it needs dolfinx
+  - scifem
+  # the h5py wheels on PyPI are serial-only
   - h5py =*=mpi_*
-  - sphinx-design
-  - sphinxcontrib-bibtex
-  - sympy
-  - sphinx-book-theme
-  - sphinx-copybutton
-  - pillow
   - pip
-  - pip:
-      - pyalex

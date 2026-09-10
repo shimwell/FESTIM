@@ -33,7 +33,16 @@ classifiers = [
 plot = ["pyvista"]
 test = ["pytest >= 5.4.3", "pytest-cov", "sympy", "scipy", "ipyparallel"]
 lint = ["ruff", "mypy"]
-docs = ["sphinx", "sphinx-book-theme", "sphinx-design", "matplotlib"]
+docs = [
+    "sphinx",
+    "sphinx-book-theme",
+    "sphinx-design",
+    "sphinx-copybutton",
+    "sphinxcontrib-bibtex",
+    "matplotlib",
+    "pyalex",
+    "pyyaml",
+]
 
 [project.urls]
 Homepage = "https://github.com/festim-dev/FESTIM"
