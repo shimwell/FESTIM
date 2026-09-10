@@ -23,6 +23,10 @@ jobs:
           activate-environment: festim2-docs
           environment-file: docs/environment.yml
 
+      - name: Install FESTIM and its documentation dependencies
+        shell: bash -l {0}
+        run: python -m pip install .[docs]
+
       - name: Doc Tests
         shell: bash -l {0}
         run: sphinx-build -b doctest docs/source docs/_build/doctest
